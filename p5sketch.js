@@ -5,7 +5,8 @@ const s = (p) => {
     let scaleRatioX, scaleRatioY;
 
     p.setup = function () {
-        p.createCanvas(320, 240);
+        // p.createCanvas(160, 120);
+        p.createCanvas(window.innerWidth, window.innerHeight);
         video = p.createCapture(p.VIDEO);
         video.size(p.width, p.height);
 
