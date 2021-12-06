@@ -1877,11 +1877,21 @@ function correctDeltaY(delta) {
     return delta;
 }
 
+// function generateColor() {
+//     let c = HSVtoRGB(Math.random(), 1.0, 1.0);
+//     c.r *= 0.15;
+//     c.g *= 0.15;
+//     c.b *= 0.15;
+//     return c;
+// }
+
 function generateColor() {
-    let c = HSVtoRGB(Math.random(), 1.0, 1.0);
-    c.r *= 0.15;
-    c.g *= 0.15;
-    c.b *= 0.15;
+    let max = 1.0;
+    let min = 0.45;
+    let c = HSVtoRGB(Math.random() * (max - min) + min, 1.0, 1.0);
+    c.r *= 0.5;
+    c.g *= 0.4;
+    c.b *= 0.7;
     return c;
 }
 
