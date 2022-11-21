@@ -9,9 +9,10 @@ const s = (p) => {
         p.createCanvas(window.innerWidth, window.innerHeight);
         video = p.createCapture(p.VIDEO);
         video.size(p.width, p.height);
+        flippedVideo = ml5.flipImage(video);
 
         // Create a new poseNet method with a single detection
-        poseNet = ml5.poseNet(video, modelReady);
+        poseNet = ml5.poseNet(flippedVideo, modelReady);
         // This sets up an event that fills the global variable "poses"
         // with an array every time new poses are detected
         poseNet.on("pose", function (results) {
@@ -37,7 +38,7 @@ const s = (p) => {
     }
 
     p.draw = function () {
-        p.image(video, 0, 0, p.width, p.height);
+        p.image(flippedVideo, 0, 0, p.width, p.height);
         // We can call both functions to draw all keypoints and the skeletons
         drawKeypoints();
         drawSkeleton();
