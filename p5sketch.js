@@ -5,7 +5,6 @@ const s = (p) => {
     let scaleRatioX, scaleRatioY;
 
     p.setup = () => {
-        ml5.p5Utils.setP5Instance(p);
         // p.createCanvas(160, 120);
         p.createCanvas(window.innerWidth, window.innerHeight);
         video = p.createCapture(p.VIDEO);
