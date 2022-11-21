@@ -4,7 +4,7 @@ const s = (p) => {
     let poses = [];
     let scaleRatioX, scaleRatioY;
 
-    p.setup = () => {
+    p.setup = function () {
         // p.createCanvas(160, 120);
         p.createCanvas(window.innerWidth, window.innerHeight);
         video = p.createCapture(p.VIDEO);
