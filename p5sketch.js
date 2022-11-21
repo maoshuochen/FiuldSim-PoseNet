@@ -11,8 +11,9 @@ const s = (p) => {
         video = p.createCapture(p.VIDEO);
         video.size(p.width, p.height);
 
+        flippedVideo = ml5.flipImage(video);
         // Create a new poseNet method with a single detection
-        poseNet = ml5.poseNet(video, modelReady);
+        poseNet = ml5.poseNet(flippedVideo, modelReady);
         // This sets up an event that fills the global variable "poses"
         // with an array every time new poses are detected
         poseNet.on("pose", function (results) {
